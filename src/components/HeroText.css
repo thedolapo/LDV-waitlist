@@ -40,7 +40,7 @@
 
 /* Label overlaps headline (tight spacing); no wrap; blue per Figma */
 .hero-text__label {
-  margin: 0 0 -8px;
+  margin: 0;
   color: #0d5e8e;
   font-family: Inter, system-ui, sans-serif;
   font-size: clamp(0.75rem, 1.464vw, 21.082px);
@@ -54,7 +54,7 @@
 
 /* Tagline overlaps headline; 26.3px at 1440px → 1.826vw, no shadow; no wrap; scales for mobile */
 .hero-text__tagline {
-  margin: -8px 0 0;
+  margin: 0;
   color: #fff;
   font-family: 'Cintarini', Georgia, serif;
   font-size: clamp(0.75rem, 1.826vw, 26.3px);
