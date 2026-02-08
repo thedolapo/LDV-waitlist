@@ -68,7 +68,7 @@ In go54’s DNS for **ldvsupply.com**:
 
 Save DNS. Propagation can take a few minutes up to 48 hours.
 
-The app is already built with `base: '/'` so it will work at **https://ldvsupply.com**.
+For **ldvsupply.com** (custom domain): in `vite.config.ts` set `base: '/'`, then push so the workflow rebuilds. The **thedolapo.github.io/LDV-waitlist** URL will then 404 on assets until you switch back to `base: '/LDV-waitlist/'` if you need both.
 
 ---
 
