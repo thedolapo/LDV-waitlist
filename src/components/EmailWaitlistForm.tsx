@@ -37,7 +37,7 @@ export default function EmailWaitlistForm() {
           className="email-waitlist-form__submit"
           aria-label="Submit email"
         >
-          <img src="/arrow-submit.svg" alt="" width={10} height={12} aria-hidden />
+          <img src={`${import.meta.env.BASE_URL}arrow-submit.svg`} alt="" width={10} height={12} aria-hidden />
         </button>
       </div>
       <ValidationError

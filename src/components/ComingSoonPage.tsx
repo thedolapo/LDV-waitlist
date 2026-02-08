@@ -16,12 +16,16 @@ export default function ComingSoonPage({ audioRef, musicSrc }: Props) {
       role="main"
       aria-label="LA DOLCE VITA coming soon"
     >
-      <div className="coming-soon-page__bg" aria-hidden />
+      <div
+        className="coming-soon-page__bg"
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}ldvbackground-beach.png)` }}
+        aria-hidden
+      />
       <div className="coming-soon-page__overlay" aria-hidden />
       <div className="coming-soon-page__content">
         <header className="coming-soon-page__hero" aria-label="Logo">
           <img
-            src="/ldv-logo.svg"
+            src={`${import.meta.env.BASE_URL}ldv-logo.svg`}
             alt="LA DOLCE VITA"
             className="coming-soon-page__logo"
           />

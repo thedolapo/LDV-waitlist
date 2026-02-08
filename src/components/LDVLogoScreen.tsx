@@ -100,12 +100,12 @@ export default function LDVLogoScreen({ onEnter, onUserGesture }: Props) {
       <div
         className="ldv-logo-screen__bg-strokes"
         aria-hidden
-        style={{ backgroundImage: 'url(/ldv-bg-strokes.svg)' }}
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}ldv-bg-strokes.svg)` }}
       />
 
       <div className="ldv-logo-screen__content">
         <h1 className="ldv-logo-screen__title">
-          <img src="/ldv-logo.svg" alt="LDV" className="ldv-logo-screen__logo" />
+          <img src={`${import.meta.env.BASE_URL}ldv-logo.svg`} alt="LDV" className="ldv-logo-screen__logo" />
         </h1>
         <div className="ldv-logo-screen__line" role="progressbar" aria-valuenow={Math.round(progress * 100)} aria-valuemin={0} aria-valuemax={100}>
           <span className="ldv-logo-screen__line-fill" style={{ width: `${progress * 100}%` }} />
