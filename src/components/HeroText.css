@@ -8,14 +8,20 @@
   margin-top: -200px;
 }
 
-/* Below 640px: 2× scale for whole block (same treatment as logo) */
+/* Below 640px: 2× scale, no overlap, margins 0 */
 @media (max-width: 640px) {
   .hero-text {
-    margin-top: clamp(-120px, -25vw, -80px);
+    margin: 0;
     width: 50%;
     max-width: 50%;
     transform: scale(2);
     transform-origin: center center;
+  }
+
+  .hero-text__label,
+  .hero-text__headline,
+  .hero-text__tagline {
+    margin: 0;
   }
 }
 
