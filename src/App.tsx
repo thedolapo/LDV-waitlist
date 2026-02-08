@@ -10,10 +10,13 @@ export default function App() {
   const [screen, setScreen] = useState<Screen>('logo');
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const goToComingSoon = useCallback(() => setScreen('coming-soon'), []);
   const startMusic = useCallback(() => {
     audioRef.current?.play().catch(() => {});
   }, []);
+  const goToComingSoon = useCallback(() => {
+    startMusic();
+    setScreen('coming-soon');
+  }, [startMusic]);
 
   return (
     <>

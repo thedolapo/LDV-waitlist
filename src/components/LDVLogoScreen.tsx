@@ -41,15 +41,16 @@ export default function LDVLogoScreen({ onEnter, onUserGesture }: Props) {
     return () => cancelAnimationFrame(rafRef.current);
   }, [visible]);
 
-  // Auto-navigate when progress completes
+  // Auto-navigate when progress completes (try startMusic; may be blocked by browser without user gesture)
   useEffect(() => {
     if (progress < 1) return;
     setExiting(true);
+    onUserGesture?.();
     const t = setTimeout(() => {
       onEnter();
     }, 400);
     return () => clearTimeout(t);
-  }, [progress, onEnter]);
+  }, [progress, onEnter, onUserGesture]);
 
   // Show hint only if page didn't load automatically (fallback after delay)
   useEffect(() => {
