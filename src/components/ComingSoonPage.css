@@ -2,9 +2,17 @@
 .coming-soon-page {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+/* PNG background only (no canvas – better performance) */
+.coming-soon-page__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
   background-image: url('/ldvbackground-beach.png');
   background-size: cover;
   background-position: center;
@@ -34,6 +42,8 @@
   flex-direction: column;
   align-items: center;
   padding: 0 1.5rem;
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
 }
 
 /* Logo only in header, 72px from top (Figma 1:53) */
@@ -45,7 +55,7 @@
   align-items: center;
 }
 
-/* Logo: ~60×34 at 1440px (4.17vw × 2.36vw) */
+/* Logo: ~60×34 at 1440px; scales up on mobile to fill better */
 .coming-soon-page__logo {
   width: clamp(48px, 4.17vw, 60px);
   height: clamp(27px, 2.36vw, 34px);
@@ -59,13 +69,39 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 0;
 }
 
 .coming-soon-page__cta-wrap {
   flex-shrink: 0;
   width: 100%;
   max-width: min(420px, 90vw);
-  padding-bottom: 26px;
+  padding-bottom: max(26px, env(safe-area-inset-bottom));
   display: flex;
   justify-content: center;
 }
+
+/* Responsive: scale to fit mobile, stack CTA above music */
+@media (max-width: 640px) {
+  .coming-soon-page__content {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    min-height: 100dvh;
+  }
+
+  .coming-soon-page__hero {
+    padding-top: clamp(48px, 12vw, 72px);
+  }
+
+  .coming-soon-page__logo {
+    width: min(clamp(112px, 28vw, 120px), 85vw);
+    height: auto;
+    object-fit: contain;
+  }
+
+  .coming-soon-page__cta-wrap {
+    padding-bottom: 1rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+

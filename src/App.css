@@ -2,3 +2,23 @@
 .app {
   min-height: 100vh;
 }
+
+.app__audio {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+
+/* Smooth fade-in when transitioning from logo screen to coming soon */
+.app__coming-soon-wrap {
+  animation: app-coming-soon-fade-in 0.5s ease-out forwards;
+}
+
+@keyframes app-coming-soon-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -4,6 +4,11 @@ Two-screen waitlist site: LDV logo splash (click or Enter to continue) and Comin
 
 **Run:** `npm install` then `npm run dev`.
 
+### Security (public repo)
+
+- **Do not commit credentials.** `.gitignore` excludes `.env`, `.env.*`, `*.pem`, `secrets/`, and similar. Use env vars or a secrets manager for API keys; never hardcode them.
+- The Formspree form ID in the client is **intended to be public**; form submission is validated and rate-limited by Formspree.
+
 **Assets (optional):** Add `public/beach.jpg` (full-screen beach illustration from Figma) to replace the procedural gradient background and glass-card preview. Export from [Figma LDV](https://www.figma.com/design/aCm5KklxPWk6L5IoEkjvrW/LDV) node 1:53.
 
 ---

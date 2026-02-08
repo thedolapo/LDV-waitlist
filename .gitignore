@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Secrets and credentials – never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+.credentials
+
 # Playwright
 playwright-report/
 test-results/

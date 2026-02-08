@@ -19,11 +19,6 @@
   padding: clamp(4px, 0.35vw, 6px) clamp(6px, 0.7vw, 10px) clamp(4px, 0.35vw, 6px) clamp(16px, 1.25vw, 18px);
   min-height: 52px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-  transition: box-shadow var(--transition-fast);
-}
-
-.email-waitlist-form__row:focus-within {
-  box-shadow: 0 4px 24px rgba(0, 150, 255, 0.25);
 }
 
 .email-waitlist-form__input {
@@ -97,7 +92,7 @@
 .email-waitlist-form__success {
   margin: 0;
   font-size: 1rem;
-  color: var(--text-white);
+  color: #0d5e8e;
   text-align: center;
   padding: 1rem;
 }

@@ -1,0 +1,90 @@
+/* Minimalist background music: play/pause + volume */
+.background-music {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.35rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 6px;
+}
+
+.background-music__play {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.65rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.background-music__play:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.background-music__play:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 1px;
+}
+
+.background-music__volume-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.background-music__volume-icon {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1;
+}
+
+.background-music__volume {
+  width: 4rem;
+  height: 4px;
+  accent-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.background-music__volume:focus {
+  outline: none;
+}
+
+.background-music__volume::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+}
+
+.background-music__volume::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  cursor: pointer;
+}
+
+/* Small screens: stack below CTA (in flow), centered */
+@media (max-width: 640px) {
+  .background-music {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 0.5rem auto 1.5rem;
+    margin-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+}
