@@ -1,0 +1,97 @@
+/* LDV – Design system variables (Ciridae / Lusion inspired) */
+
+/* Figma assets: Philosopher (LA DOLCE VITA) */
+@font-face {
+  font-family: 'Philosopher';
+  src: url('/fonts/Philosopher-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Philosopher';
+  src: url('/fonts/Philosopher-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Philosopher';
+  src: url('/fonts/Philosopher-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Philosopher';
+  src: url('/fonts/Philosopher-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cintarini';
+  src: url('/fonts/Cintarini.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  /* Colors */
+  --bg-black: #000000;
+  --text-white: #ffffff;
+  --text-white-muted: rgba(255, 255, 255, 0.85);
+  --accent-azure: #0096ff;
+  --accent-azure-hover: #33aaff;
+  --teal-muted: rgba(30, 50, 55, 0.75);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --input-bg: rgba(255, 255, 255, 0.95);
+  --input-placeholder: rgba(0, 0, 0, 0.45);
+
+  /* Typography */
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: 0.2s var(--ease-out);
+  --transition-normal: 0.35s var(--ease-out);
+  --transition-slow: 0.6s var(--ease-out);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent-azure);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

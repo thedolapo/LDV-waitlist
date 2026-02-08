@@ -1,0 +1,48 @@
+/* Figma 1:53 – hero typography: 86px headline / 26.3px tagline at 1440px, bold italic, no shadows. No wrap, mobile-scaled. ~20px above center. */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 0.5rem;
+  max-width: min(500px, 95vw);
+  margin-top: -200px;
+}
+
+/* 86px at 1440px → 5.972vw; bold italic, no shadow; no wrap; scales 24px–86px for mobile */
+.hero-text__headline {
+  margin: 0;
+  color: #fff;
+  font-family: 'Philosopher', Georgia, serif;
+  font-size: clamp(24px, 5.972vw, 86px);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+/* Label overlaps headline (tight spacing); no wrap; blue per Figma */
+.hero-text__label {
+  margin: 0 0 -8px;
+  color: #0d5e8e;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(0.75rem, 1.464vw, 21.082px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Tagline overlaps headline; 26.3px at 1440px → 1.826vw, no shadow; no wrap; scales for mobile */
+.hero-text__tagline {
+  margin: -8px 0 0;
+  color: #fff;
+  font-family: 'Cintarini', Georgia, serif;
+  font-size: clamp(0.75rem, 1.826vw, 26.3px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+}

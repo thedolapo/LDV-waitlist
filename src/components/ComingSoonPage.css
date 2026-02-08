@@ -1,0 +1,71 @@
+/* Figma 1:53 – full-viewport beach, logo 72px from top, hero text centered, CTA 26px from bottom */
+.coming-soon-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-image: url('/ldvbackground-beach.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.coming-soon-page__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    transparent 28%,
+    transparent 68%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+}
+
+.coming-soon-page__content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+/* Logo only in header, 72px from top (Figma 1:53) */
+.coming-soon-page__hero {
+  flex-shrink: 0;
+  padding-top: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo: ~60×34 at 1440px (4.17vw × 2.36vw) */
+.coming-soon-page__logo {
+  width: clamp(48px, 4.17vw, 60px);
+  height: clamp(27px, 2.36vw, 34px);
+  object-fit: contain;
+}
+
+/* Hero text block: ~20px above vertical center */
+.coming-soon-page__hero-text-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.coming-soon-page__cta-wrap {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: min(420px, 90vw);
+  padding-bottom: 26px;
+  display: flex;
+  justify-content: center;
+}

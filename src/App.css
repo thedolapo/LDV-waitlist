@@ -1,0 +1,4 @@
+/* App-level layout – no default centering so full-screen sections control their own layout */
+.app {
+  min-height: 100vh;
+}
