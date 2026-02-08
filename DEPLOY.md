@@ -68,7 +68,23 @@ In go54’s DNS for **ldvsupply.com**:
 
 Save DNS. Propagation can take a few minutes up to 48 hours.
 
-For **ldvsupply.com** (custom domain): in `vite.config.ts` set `base: '/'`, then push so the workflow rebuilds. The **thedolapo.github.io/LDV-waitlist** URL will then 404 on assets until you switch back to `base: '/LDV-waitlist/'` if you need both.
+The repo is set up with `base: '/'` so **ldvsupply.com** works at the root. After you push, the **thedolapo.github.io/LDV-waitlist** URL will 404 on assets; to use that URL again, set `base: '/LDV-waitlist/'` in `vite.config.ts` and push.
+
+### If ldvsupply.com still doesn’t work
+
+1. **DNS (go54)**  
+   For **ldvsupply.com** you must have these 4 A records (no CNAME for the root):
+   - `185.199.108.153`
+   - `185.199.109.153`
+   - `185.199.110.153`
+   - `185.199.111.153`  
+   Check with `dig ldvsupply.com` or [dnschecker.org](https://dnschecker.org); propagation can take up to 48 hours.
+
+2. **GitHub custom domain**  
+   Repo **Settings → Pages**: under **Custom domain** enter **ldvsupply.com** and save. If GitHub shows a warning, fix the suggested DNS (often CNAME for root is wrong; use the 4 A records above).
+
+3. **HTTPS**  
+   Prefer **https://ldvsupply.com**. GitHub will provision a certificate after DNS and custom domain are correct.
 
 ---
 

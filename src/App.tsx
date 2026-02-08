@@ -3,7 +3,7 @@ import LDVLogoScreen from './components/LDVLogoScreen';
 import ComingSoonPage from './components/ComingSoonPage';
 import './App.css';
 
-const MUSIC_SRC = `${import.meta.env.BASE_URL}music/A%20good%20day-Habib%20Ayoade.mp3`;
+const MUSIC_SRC = `${import.meta.env.BASE_URL}music/a-good-day-habib-ayoade.mp3`;
 type Screen = 'logo' | 'coming-soon';
 
 export default function App() {
